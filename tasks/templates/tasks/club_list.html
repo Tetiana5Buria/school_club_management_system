@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Клуби</title>
+    <link rel="stylesheet" href="{% static 'tasks/css/style.css' %}">
+</head>
+
+<body>
+    {% include 'tasks/base.html' %}
+
+    <div class="students_block">
+        <h1 class="main_text">Список клубів</h1>
+
+        <a class="btn btn-primary" href="{% url 'club_create' %}">Додати клуб</a>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Назва</th>
+                <th>Опис</th>
+                <th>Дії</th>
+            </tr>
+
+            {% for club in clubs %}
+            <tr>
+                <td>{{ club.id }}</td>
+                <td>{{ club.name }}</td>
+                <td>{{ club.description }}</td>
+                <td>
+                    <a class="btn btn-warning" href="{% url 'club_update' club.id %}">Редагувати</a>
+                    <a class="btn btn-danger" href="{% url 'club_delete' club.id %}">Видалити</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+
+
+</body>
+
+</html>

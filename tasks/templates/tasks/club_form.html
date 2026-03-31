@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Клуб</title>
+    <link rel="stylesheet" href="{% static 'tasks/css/style.css' %}">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1 class="main_text">Клуб(секція)</h1>
+
+    <form class="form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-primary">Зберегти</button>
+    </form>
+    <a class="back_to_list" href="{% url 'club_list' %}"> <i class='bx bx-chevron-left'></i> Назад до списку</a>
+
+</body>
+
+</html>

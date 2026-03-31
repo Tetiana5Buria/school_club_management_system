@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Записи в клуби</title>
+    <link rel="stylesheet" href="{% static 'tasks/css/style.css' %}">
+</head>
+
+<body>
+    {% include 'tasks/base.html' %}
+
+    <h1 class="main_text">Записи в клуби</h1>
+
+    <a class="btn btn-primary" href="{% url 'enrollment_create' %}">Додати учня </a>
+
+    <table>
+        <tr>
+            <th>Студент</th>
+            <th>Клуб</th>
+            <th>Дія</th>
+        </tr>
+
+        {% for e in enrollments %}
+        <tr>
+            <td>{{ e.student }}</td>
+            <td>{{ e.club }}</td>
+            <td>
+                <a class="btn btn-danger" href="{% url 'enrollment_delete' e.id %}">Видалити</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+
+</html>

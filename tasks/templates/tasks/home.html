@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>БД ДЖАНГО</title>
+    <link rel="stylesheet" href="{% static 'tasks/css/style.css' %}">
+
+</head>
+
+<body>
+    <div class="flag"></div>
+    <nav class="nav_bar">
+        {% if user.is_authenticated %}
+
+
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <p>Привіт, {{ user.username }}</p>
+            <button class="btn btn-warning" type="submit">Вийти</button>
+        </form>
+
+        {% else %}
+        <a href="{% url 'login' %}">Увійти</a>
+        <a href="{% url 'register' %}">Реєстрація</a>
+        {% endif %}
+    </nav>
+    <div class="container">
+        <div class="container_back">
+            <h1 class="main_text">Вітаємо на сайті</h1>
+            <p style="text-align:center;">Перейти до <a href="/students/">списку студентів</a></p>
+            <p style="text-align:center;">Перейти до <a href="/clubs/"> клубів</a>
+            <p style="text-align:center;">Перейти до <a href="/enrollments/"> зарахування</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

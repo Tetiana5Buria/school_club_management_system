@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Видалення даних про учня</title>
+    <link rel="stylesheet" href="{% static 'tasks/css/style.css' %}">
+</head>
+
+<body>
+    <h1 class="main_text">Видалити {{ student.first_name }} {{ student.last_name }}?</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Видалити</button>
+        <p>Цю дію неможливо скасувати.</p>
+    </form>
+
+    <a class="back_to_list" href="{% url 'student_list' %}">Назад до списку</a>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'tasks/css/style.css' %}">
+</head>
+
+<body>
+    <div class="container_back">
+        <h2 class="main_text">Вхід</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button class=" btn btn-primary" type="submit">Увійти</button>
+
+            <p>
+                Немає акаунта?
+                <a href="{% url 'register' %}">Реєстрація</a>
+            </p>
+        </form>
+
+
+    </div>
+
+</html>

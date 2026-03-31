@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запис учня в клуб</title>
+    <link rel="stylesheet" href="{% static 'tasks/css/style.css' %}">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1 class="main_text">Запис учня в клуб</h1>
+
+    <form class="form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-success">Зберегти запис</button>
+        <a href="{% url 'enrollment_list' %}" class="btn btn-secondary">Скасувати</a>
+    </form>
+
+    <br>
+    <a class="back_to_list" href="{% url 'enrollment_list' %}"> <i class='bx bx-chevron-left'></i> Назад до списку</a>
+</body>
+
+</html>

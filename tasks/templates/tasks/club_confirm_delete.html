@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Видалення</title>
+    <link rel="stylesheet" href="{% static 'tasks/css/style.css' %}">
+</head>
+
+<body>
+
+    <h1 class="main_text">Видалити клуб?</h1>
+
+    <p class="main_text">{{ club.name }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button class="btn btn-danger">Так, видалити</button>
+
+    </form>
+    <a class="back_to_list btn  btn-success" href="{% url 'club_list' %}">Скасувати</a>
+
+
+</body>
+
+</html>
