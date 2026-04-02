@@ -17,7 +17,7 @@
         <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
             <p>Привіт, {{ user.username }}</p>
-            <button class="btn btn-warning" type="submit">Вийти</button>
+            <button class="btn btn-danger" type="submit">Вийти</button>
         </form>
 
         {% else %}
