@@ -1,4 +1,4 @@
-# Записи учнів в клуби
+# Записи учнів в секції
 
 Сучасний **Django-сайт** для управління учнями та їх записами в різні клуби.
 Проєкт демонструє чисту архітектуру, адаптивний дизайн та ефекти **Glassmorphism** з анімованим градієнтом.
@@ -17,7 +17,7 @@
 ## 🛠 Технології
 
 - **Backend:** [Django 6.0](https://www.djangoproject.com/)
-- **Frontend:** HTML, CSS (з анімаціями)
+- **Frontend:** HTML, CSS
 - **Database:** SQLite3 (локально)
 - **Deployment:** [Render.com](https://render.com/)
 - **Стилі:** Glassmorphism + сучасний градієнт
