@@ -11,7 +11,7 @@
     --color-success: #16a34a;
     --color-success-hover: #22c55e;
 
-    --bg-main-gradient: linear-gradient(to bottom, #0aace2, #dcc517);
+    --bg-main-gradient: linear-gradient(to bottom, #3bb0c5, #cfc15c);
     --bg-metal: linear-gradient(120deg,
             #a2eee1 0%,
             #abf5e8 15%,
@@ -20,6 +20,16 @@
             #e3e8ea 60%,
             #1ebbb0 75%,
             #f8fbfc 100%);
+    --bg-metal-mobil: linear-gradient(120deg,
+            #5ba79a 0%,
+            #96a2a0 15%,
+            #798f8c 30%,
+            #11bcb9 45%,
+            #7a878d 60%,
+            #1ebbb0 75%,
+            #7f8486 100%);
+
+
     --bg-glass: rgba(255, 255, 255, 0.15);
     --bg-glass-light: rgba(255, 255, 255, 0.09);
     --text-light: #fff7e6;
@@ -76,8 +86,6 @@ body {
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
     filter: brightness(1.05);
 }
-
-
 
 
 
@@ -143,7 +151,7 @@ body {
     border-radius: 15px;
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    width: 350px;
+    width: 50%;
     text-align: center;
 }
 
@@ -152,7 +160,7 @@ body {
 
 .main_text {
     color: var(--text-light);
-    font-size: clamp(2rem, 2vw, 5rem);
+    font-size: clamp(3rem, 2vw, 5rem);
     font-weight: 700;
     display: flex;
     justify-content: center;
@@ -283,7 +291,7 @@ table tr:hover td {
 
 form {
     max-width: clamp(20rem, 50vw, 40rem);
-    margin: 40px auto;
+    margin: 0 auto;
     padding: 40px 35px;
     background: rgba(255, 255, 255, 0.09);
     border-radius: 22px;
@@ -344,4 +352,23 @@ footer {
 .home-btn:hover {
     background-color: rgba(0, 0, 0, 0.08);
     color: white;
+}
+
+@media (max-width: 768px) {
+    .flag {
+        background: var(--bg-metal-mobil);
+
+
+    }
+
+    .container_back {
+        width: 100%;
+        height: 50vh;
+        padding: 10px;
+    }
+
+    p {
+        font-size: 26px;
+        font-weight: 500;
+    }
 }
