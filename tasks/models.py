@@ -25,7 +25,7 @@ class Student(models.Model):
         max_length=10,
         unique=True,
         validators=[inn_validator],
-        null=False
+        null=True
 
     )
     first_name = models.CharField("Ім'я", max_length=100, validators=[validator])

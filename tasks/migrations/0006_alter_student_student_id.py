@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='student',
             name='student_id',
-            field=models.CharField(max_length=10, unique=True, validators=[django.core.validators.RegexValidator(message='ІПН повинен містити рівно 10 цифр.', regex='^\\d{10}$')], verbose_name='ІПН'),
+            field=models.CharField(max_length=10, unique=True,null=True, validators=[django.core.validators.RegexValidator(message='ІПН повинен містити рівно 10 цифр.', regex='^\\d{10}$')], verbose_name='ІПН'),
         ),
     ]
