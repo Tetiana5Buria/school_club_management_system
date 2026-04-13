@@ -13,9 +13,14 @@
 
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
 
-            <button class=" btn btn-primary" type="submit">Увійти</button>
+            <label>Логін або Email</label>
+            {{ form.login }}
+
+            <label>Пароль</label>
+            {{ form.password }}
+
+            <button class="btn btn-primary" type="submit">Увійти</button>
 
             <p>
                 Немає акаунта?

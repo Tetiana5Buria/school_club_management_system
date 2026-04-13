@@ -16,11 +16,28 @@
 
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form.non_field_errors }}
+
+            <label>Логін</label>
+            {{ form.username }}
+            {{ form.username.errors }}
+
+            <label>Email</label>
+            {{ form.email }}
+            {{ form.email.errors }}
+
+            <label>Пароль</label>
+            {{ form.password1 }}
+            {{ form.password.errors }}
+
+            <label>Підтвердження паролю</label>
+            {{ form.password2 }}
+            {{ form.password2.errors }}
 
             <button class="btn btn-primary" type="submit">
                 Зареєструватися
             </button>
+
             <p>
                 Вже є акаунт?
                 <a href="{% url 'login' %}">Увійти</a>

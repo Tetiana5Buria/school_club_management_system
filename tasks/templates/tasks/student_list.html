@@ -17,7 +17,7 @@
         <a class="btn btn-primary" href="{% url 'student_create' %}">Додати учня</a>
         <table class="table">
             <tr>
-                <th>ID</th>
+                <th>ІПН</th>
                 <th>Ім'я</th>
                 <th>Прізвище</th>
                 <th>Вік</th>
@@ -26,7 +26,7 @@
             </tr>
             {% for student in students %}
             <tr>
-                <td>{{ student.id }}</td>
+                <td>{{ student.student_id }}</td>
                 <td>{{ student.first_name }}</td>
                 <td>{{ student.last_name }}</td>
                 <td>{{ student.age }}</td>

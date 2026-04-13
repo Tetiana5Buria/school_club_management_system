@@ -1,37 +1,37 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 
 <head>
-    <title>БД ДЖАНГО</title>
+    <meta charset="UTF-8">
+    <title>Панель управління</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'tasks/css/style.css' %}">
-
 </head>
 
 <body>
-    <div class="flag"></div>
+
     <nav class="nav_bar">
-        {% if user.is_authenticated %}
-
-
         <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
             <p>Привіт, {{ user.username }}</p>
             <button class="btn btn-danger" type="submit">Вийти</button>
         </form>
-
-        {% else %}
-        <a href="{% url 'login' %}">Увійти</a>
-        <a href="{% url 'register' %}">Реєстрація</a>
-        {% endif %}
     </nav>
+
     <div class="container">
         <div class="container_back">
-            <h1 class="main_text">Вітаємо на сайті</h1>
-            <p style="text-align:center;">Перейти до <a href="/students/">списку студентів</a></p>
-            <p style="text-align:center;">Перейти до <a href="/clubs/"> клубів</a>
-            <p style="text-align:center;">Перейти до <a href="/enrollments/"> зарахування</a>
+
+            <h1 class="main_text">Панель управління</h1>
+
+            <p>Розділи системи:</p>
+
+            <div class="menu">
+                <a href="/students/" class="btn btn-primary">Учні</a>
+                <a href="/clubs/" class="btn btn-primary">Гуртки</a>
+                <a href="/enrollments/" class="btn btn-primary">Зарахування</a>
+            </div>
+
         </div>
     </div>
 
