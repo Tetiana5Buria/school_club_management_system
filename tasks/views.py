@@ -1,10 +1,12 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Student,Club,Enrollment
 from .forms import RegisterForm, StudentForm,ClubForm,EnrollmentForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from .forms import LoginForm
 
 def landing(request):
     return render(request, 'tasks/landing.html')
@@ -126,10 +128,7 @@ def enrollment_delete(request, pk):
     return render(request, 'tasks/enrollment_confirm_delete.html', {'enrollment': enrollment})
 
 #іхід
-from django.contrib.auth import authenticate, login
-from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
-from .forms import LoginForm
+
 
 
 def login_view(request):
@@ -139,7 +138,6 @@ def login_view(request):
         login_input = form.cleaned_data['login']
         password = form.cleaned_data['password']
 
-        # перевіряємо: це email чи username
         user = None
 
         if '@' in login_input:
@@ -166,7 +164,7 @@ def register(request):
 
     if request.method == 'POST':
         if not form.is_valid():
-            print(form.errors)   # 🔥 ОЦЕ ДОДАЄШ
+            print(form.errors)
 
         if form.is_valid():
             form.save()

@@ -70,7 +70,7 @@ http://127.0.0.1:8000/admin
 
 If deployed:
 
-site: your-link-here
+site: https://school-club-management-system.onrender.com
 
 ```
 
