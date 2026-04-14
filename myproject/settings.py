@@ -31,7 +31,7 @@ DEBUG = os.getenv('DEBUG') == 'False'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'python-project-t0qz.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'school-club-management-system.onrender.com']
 
 
 # Application definition
@@ -90,9 +90,9 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASE_URL = os.environ.get("DATABASE_URL")
 
 if DATABASE_URL:
-    DATABASES = {
-        'default': dj_database_url.parse(DATABASE_URL)
-    }
+   DATABASES = {
+    'default': dj_database_url.config(default=os.getenv("DATABASE_URL"))
+}
 else:
     DATABASES = {
         'default': {
