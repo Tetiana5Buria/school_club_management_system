@@ -164,8 +164,12 @@ def login_view(request):
 def register(request):
     form = RegisterForm(request.POST or None)
 
-    if request.method == 'POST' and form.is_valid():
-        form.save()
-        return redirect('home')
+    if request.method == 'POST':
+        if not form.is_valid():
+            print(form.errors)   # 🔥 ОЦЕ ДОДАЄШ
+
+        if form.is_valid():
+            form.save()
+            return redirect('home')
 
     return render(request, 'tasks/register.html', {'form': form})
